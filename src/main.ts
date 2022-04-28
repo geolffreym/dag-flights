@@ -71,5 +71,6 @@ app.put('/:orig/:dest', (req: express.Request, res: express.Response) => {
 
 // Start listening on port 3000
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`)
+  // @ts-ignore
+  console.info(`Example app listening on port ${PORT}`)
 })
