@@ -60,6 +60,7 @@ export default class DirectedGraph {
      */
     generatePaths(root: string, dest: string, path: string[] = []): Paths {
         // Reached back the initial node
+        // When the search is done the root is reflexive
         if (root === dest) {
             // Add paths list as a new block of paths
             this.paths.push(path)
