@@ -59,7 +59,6 @@ export default class DirectedGraph {
      * @param path Recursive path list
      */
     generatePaths(root: string, dest: string, path: string[] = []): Paths {
-        // Keep tracking already visited nodes
         // Reached back the initial node
         if (root === dest) {
             this.paths.push(path)
