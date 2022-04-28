@@ -1,4 +1,4 @@
-import DirectedGraph from './dg'
+import DirectedGraph from './dg.js'
 
 describe('DirectedGraph Test', function () {
   it('should contain defined vertex list', function () {

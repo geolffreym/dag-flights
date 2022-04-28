@@ -18,7 +18,7 @@
 
 import 'dotenv/config'
 import express from 'express'
-import DirectedGraph from './lib/dg'
+import DirectedGraph from './lib/dg.js'
 
 // Default port
 const PORT = process.env.PORT || 7070
