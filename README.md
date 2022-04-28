@@ -57,9 +57,10 @@ Format code: `make fmt`
 
 Check: `make check`
 
-Potential implementation for gRPC for microservice communication
-<https://grpc.io/docs/languages/node/basics/>
-
 Refs:
 
-* <https://algs4.cs.princeton.edu/42digraph/>
+* Princeton Algorithms<https://algs4.cs.princeton.edu/42digraph/>
+* Potential implementation for gRPC <https://grpc.io/docs/languages/node/basics/>
+
+
+
