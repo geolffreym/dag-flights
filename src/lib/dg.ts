@@ -53,6 +53,7 @@ export default class DirectedGraph {
    * @param root The source node to start
    * @param dest Where are we trying to go?
    * @param path Recursive path list
+   * @param paths Recursive list of paths
    */
   routes(root: string, dest: string, path: string[] = [], paths: Paths = []): Paths {
     // Nothing to process here
