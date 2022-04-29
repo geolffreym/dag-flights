@@ -9,14 +9,8 @@ const inMemoryDB: string[][] = []
 server.get('/:orig/:dest', (req: express.Request, res: express.Response) => {
   const origin = req.params.orig
   const destination = req.params.dest
-
-  if (!origin || !destination) {
-    res.sendStatus(400)
-    res.send('Invalid request')
-    return
-  }
-
   const paths = graph.routes(origin, destination, [origin])
+
   res.setHeader('Content-Type', 'application/json')
   res.send(JSON.stringify(paths))
 })
@@ -25,13 +19,6 @@ server.get('/:orig/:dest', (req: express.Request, res: express.Response) => {
 server.put('/:orig/:dest', (req: express.Request, res: express.Response) => {
   const origin = req.params.orig
   const destination = req.params.dest
-
-  if (!origin || !destination) {
-    res.sendStatus(400)
-    res.send('Invalid request')
-    return
-  }
-
   // Initialize defined vertex
   graph.addVertex(origin)
   graph.addVertex(destination)
