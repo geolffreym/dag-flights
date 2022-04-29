@@ -56,7 +56,9 @@ export default class DirectedGraph {
    * @param dest Where are we trying to go?
    * @param path Recursive path list
    */
-  generatePaths(root: string, dest: string, path: string[] = []): Paths {
+  routes(root: string, dest: string, path: string[] = []): Paths {
+    // Nothing to process here
+    if (Object.keys(this.adjacent).length === 0) return this.paths
     // Reached back the initial node
     // When the search is done the root is reflexive
     if (root === dest) {
@@ -68,7 +70,7 @@ export default class DirectedGraph {
         // Add each vertex for current processing root
         const newPath = path.concat([vertex])
         // Generate paths recursively checking fo each sub node
-        this.generatePaths(vertex, dest, newPath)
+        this.routes(vertex, dest, newPath)
       })
     }
 

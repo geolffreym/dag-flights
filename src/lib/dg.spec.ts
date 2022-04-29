@@ -63,7 +63,7 @@ describe('DirectedGraph Test', function () {
     // Fork 3
     g.addEdge('A', 'G').addEdge('G', 'H').addEdge('H', 'I').addEdge('I', 'D')
 
-    const paths = g.generatePaths('A', 'D', ['A'])
+    const paths = g.routes('A', 'D', ['A'])
     expect(JSON.stringify(paths) === expectedPaths).toBeTruthy()
   })
 })
