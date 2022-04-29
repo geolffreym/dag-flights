@@ -9,7 +9,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
-    "import/extensions": "off",
+    'import/extensions': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-dupe-class-members': ['error'],
     '@typescript-eslint/no-useless-constructor': ['error'],

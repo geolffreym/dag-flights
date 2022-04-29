@@ -11,10 +11,9 @@ describe('API Endpoints', () => {
     expect(res.body).toEqual([])
   })
 
-  it('PUT / should return expected new route stored', async () => {
-    const res = await requestWithSupertest.put('/A/B')
-    expect(res.status).toEqual(200)
-    expect(res.text).toEqual('[A, B] edge stored')
+  it('GET / should return error 404 for invalid request', async () => {
+    const res = await requestWithSupertest.put('/')
+    expect(res.status).toEqual(404)
   })
 
   it('GET / should return expected route based on history', async () => {
@@ -32,5 +31,16 @@ describe('API Endpoints', () => {
       ['SFO', 'EWR'],
       ['SFO', 'ATL', 'GSO', 'IND', 'EWR'],
     ])
+  })
+
+  it('PUT / should return expected new route stored', async () => {
+    const res = await requestWithSupertest.put('/A/B')
+    expect(res.status).toEqual(200)
+    expect(res.text).toEqual('[A, B] edge stored')
+  })
+
+  it('PUT / should return error 404 for invalid request', async () => {
+    const res = await requestWithSupertest.put('/')
+    expect(res.status).toEqual(404)
   })
 })
