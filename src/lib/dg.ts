@@ -8,9 +8,10 @@ type Paths = string[][]
  * @classdesc Directed acyclic graph implementation
  * @see https://algs4.cs.princeton.edu/home/
  *
- * @param {Edges} collection of mapped edges
- * @param {vertices} keep tracking of created vertices
- * @param {number} edges Number of current created edges
+ * @param {Edges} adjacent collection of mapped edges
+ * @param {Paths} paths state for possible paths 
+ * @param {Set} vertices keep tracking of created vertices
+ * @param {number} edges edges Number of current created edges
  *
  */
 export default class DirectedGraph {

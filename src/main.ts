@@ -56,7 +56,7 @@ app.put('/:orig/:dest', (req: express.Request, res: express.Response) => {
     res.send('Invalid request')
     return
   }
-
+  
   // Initialize defined vertex
   graph.addVertex(origin)
   graph.addVertex(destination)
