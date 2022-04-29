@@ -16,14 +16,12 @@ type Paths = string[][]
  */
 export default class DirectedGraph {
   adjacent: Edges
-  paths: Paths
   vertices: Set<string>
   edges: number
 
   constructor() {
     this.adjacent = {}
     this.vertices = new Set()
-    this.paths = []
     this.edges = 0
   }
 
@@ -56,24 +54,24 @@ export default class DirectedGraph {
    * @param dest Where are we trying to go?
    * @param path Recursive path list
    */
-  routes(root: string, dest: string, path: string[] = []): Paths {
+  routes(root: string, dest: string, path: string[] = [], paths: Paths = []): Paths {
     // Nothing to process here
-    if (Object.keys(this.adjacent).length === 0) return this.paths
+    if (Object.keys(this.adjacent).length === 0) return paths
     // Reached back the initial node
     // When the search is done the root is reflexive
     if (root === dest) {
       // Add paths list as a new block of paths
-      this.paths.push(path)
+      paths.push(path)
     } else {
       // For each node in adjacency with root
       this.adjacent[root].forEach((vertex: string) => {
         // Add each vertex for current processing root
         const newPath = path.concat([vertex])
         // Generate paths recursively checking fo each sub node
-        this.routes(vertex, dest, newPath)
+        this.routes(vertex, dest, newPath, paths)
       })
     }
 
-    return this.paths
+    return paths
   }
 }
