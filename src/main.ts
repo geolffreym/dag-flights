@@ -17,59 +17,11 @@
  */
 
 import 'dotenv/config'
-import express from 'express'
-import DirectedGraph from './lib/dg.js'
-
-// Default port
+import server from './server/'
 const PORT = process.env.PORT || 7070
-const app = express()
-const graph = new DirectedGraph()
-const inMemoryDB: string[][] = []
-
-// TIME IS OUT!!!
-// Need finish test coverage for this endpoints!!
-// TODO: write tests
-// GET request handler to query routes from history
-app.get('/:orig/:dest', (req: express.Request, res: express.Response) => {
-  const origin = req.params.orig
-  const destination = req.params.dest
-
-  if (!origin || !destination) {
-    res.sendStatus(400)
-    res.send('Invalid request')
-    return
-  }
-
-  const paths = graph.generatePaths(origin, destination, [origin])
-  res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(paths))
-})
-
-// TODO: write tests
-// PUT request handler to add route history
-app.put('/:orig/:dest', (req: express.Request, res: express.Response) => {
-  const origin = req.params.orig
-  const destination = req.params.dest
-
-  if (!origin || !destination) {
-    res.sendStatus(400)
-    res.send('Invalid request')
-    return
-  }
-  
-  // Initialize defined vertex
-  graph.addVertex(origin)
-  graph.addVertex(destination)
-
-  // Keep vertex in memory
-  inMemoryDB.push([origin, destination])
-  // Create edge between vertex
-  graph.addEdge(origin, destination)
-
-  res.send(`[${origin}, ${destination}}] edge stored`)
-})
 
 // Start listening on port 3000
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.info(`Example app listening on port ${PORT}`)
 })
+
