@@ -24,4 +24,3 @@ const PORT = process.env.PORT || 7070
 server.listen(PORT, () => {
   console.info(`Example app listening on port ${PORT}`)
 })
-
