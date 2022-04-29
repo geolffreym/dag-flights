@@ -20,7 +20,7 @@ describe('DirectedGraph Test', function () {
     expect(JSON.stringify(Object.keys(g.adjacent)) == expectedVertexList).toBeTruthy()
   })
 
-  it('should contain defined edged for defined mapping vertex', function () {
+  it('should contain defined edges mapping', function () {
     const g = new DirectedGraph()
     const expectedEdgeMapping = JSON.stringify({
       A: new Set(['B']),
