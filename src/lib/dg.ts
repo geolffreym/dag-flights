@@ -5,7 +5,7 @@ type Paths = string[][]
 
 /**
  * @class
- * @classdesc Directed acyclic graph implementation
+ * @classdesc Directed graph implementation
  * @see https://algs4.cs.princeton.edu/home/
  *
  * @param {Edges} collection of mapped edges
