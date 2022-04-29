@@ -41,7 +41,7 @@ server.put('/:orig/:dest', (req: express.Request, res: express.Response) => {
     // Create edge between vertex
     graph.addEdge(origin, destination)
 
-    res.send(`[${origin}, ${destination}}] edge stored`)
+    res.send(`[${origin}, ${destination}] edge stored`)
 })
 
 

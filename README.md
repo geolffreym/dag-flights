@@ -31,6 +31,7 @@ GET /:orig/:dest // Give a list of possible routes from origin to destination
 PUT /:orig/:dest // Store a new "hypothetical" route in history
 
 Example:
+// Ordered edges
 // Fork edge 1
 curl -X PUT localhost:7070/A/B -> Edge A->B
 curl -X PUT localhost:7070/B/C ....
@@ -44,8 +45,17 @@ curl -X PUT localhost:7070/F/D ....
 // Expected routes for "person" in flight from A to D
 curl -X GET localhost:7070/A/D -> [[A,B,C,D], [A,E,F,D]]
 
+// Unordered edges
+// Fork edge 1
+curl -X PUT localhost:7070/SFO/EWR -> Edge /SFO/EWR
+curl -X PUT localhost:7070/IND/EW ....
+curl -X PUT localhost:7070/SFO/ATL ....
+curl -X PUT localhost:7070/GSO/IND ....
+curl -X PUT localhost:7070/ATL/GSO ....
 
-```
+// Expected routes for "person" in flight from A to D
+curl -X GET localhost:7070/A/D ->  [['SFO', 'EWR'], ['SFO', 'ATL', 'GSO', 'IND', 'EWR']]
+``` 
 
 ## Usage
 
@@ -59,7 +69,7 @@ Check: `make check`
 
 Refs:
 
-* Princeton Algorithms<https://algs4.cs.princeton.edu/42digraph/>
+* Princeton Algorithms <https://algs4.cs.princeton.edu/42digraph/>
 * Potential implementation for gRPC <https://grpc.io/docs/languages/node/basics/>
 
 
