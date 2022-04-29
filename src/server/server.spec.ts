@@ -12,7 +12,7 @@ describe('API Endpoints', () => {
   })
 
   it('GET / should return error 404 for invalid request', async () => {
-    const res = await requestWithSupertest.put('/')
+    const res = await requestWithSupertest.get('/')
     expect(res.status).toEqual(404)
   })
 
