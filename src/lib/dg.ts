@@ -63,11 +63,11 @@ export default class DirectedGraph {
       // Add paths list as a new block of paths
       this.paths.push(path)
     } else {
-      // For each node in adjacency wit root find
+      // For each node in adjacency with root
       this.adjacent[root].forEach((vertex: string) => {
         // Add each vertex for current processing root
         const newPath = path.concat([vertex])
-        // Generate paths recursively
+        // Generate paths recursively checking fo each sub node
         this.generatePaths(vertex, dest, newPath)
       })
     }
