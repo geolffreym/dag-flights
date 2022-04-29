@@ -1,4 +1,4 @@
-# Directed Graph for Flight Routes
+# Directed Acyclic Graph for Flight Routes
 
 Project bootstrapped using [NodeJS Starter ToolKit](https://github.com/vitorsalgado/create-nodejs-ts).  
 Visit the repository for more details.
