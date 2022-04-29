@@ -9,12 +9,20 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
-    'import/extensions': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-dupe-class-members': ['error'],
     '@typescript-eslint/no-useless-constructor': ['error'],
     '@typescript-eslint/no-inferrable-types': ['off'],
 
-    'import/extensions': ['error', 'ignorePackages', { js: 'always', jsx: 'never', ts: 'never', tsx: 'never' }],
+    'import/extensions': [
+      'off',
+      'ignorePackages',
+      {
+        js: 'always',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 }
