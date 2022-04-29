@@ -54,7 +54,7 @@ curl -X PUT localhost:7070/GSO/IND ....
 curl -X PUT localhost:7070/ATL/GSO ....
 
 // Expected routes for "person" in flight from A to D
-curl -X GET localhost:7070/A/D ->  [['SFO', 'EWR'], ['SFO', 'ATL', 'GSO', 'IND', 'EWR']]
+curl -X GET localhost:7070/SFO/EWR ->  [['SFO', 'EWR'], ['SFO', 'ATL', 'GSO', 'IND', 'EWR']]
 ``` 
 
 ## Usage
