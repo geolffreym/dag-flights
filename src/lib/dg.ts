@@ -12,7 +12,6 @@ type Paths = string[][]
  * @see https://algs4.cs.princeton.edu/home/
  *
  * @param adjacent collection of mapped edges
- * @param paths state for possible paths
  * @param vertices keep tracking of created vertices
  * @param edges edges Number of current created edges
  *
