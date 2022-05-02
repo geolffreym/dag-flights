@@ -1,4 +1,3 @@
-
 // Alias type for vertices set
 type Vertex = Set<string>
 // Define alias type for object with edge entries
