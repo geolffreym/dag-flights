@@ -1,5 +1,8 @@
+
+// Alias type for vertices set
+type Vertex = Set<string>
 // Define alias type for object with edge entries
-type Edges = { [key: string]: Set<string> }
+type Edges = { [key: string]: Vertex }
 // Alias for nested 2D path array
 type Paths = string[][]
 
@@ -16,7 +19,7 @@ type Paths = string[][]
  */
 export default class DirectedGraph {
   adjacent: Edges
-  vertices: Set<string>
+  vertices: Vertex
   edges: number
 
   constructor() {
