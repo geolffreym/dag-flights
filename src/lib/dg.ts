@@ -1,4 +1,4 @@
-// Alias type for vertices set
+ // Alias type for vertices set
 type Vertex = Set<string>
 // Define alias type for object with edge entries
 type Edges = { [key: string]: Vertex }
@@ -10,9 +10,9 @@ type Paths = string[][]
  * @classdesc Directed acyclic graph implementation
  * @see https://algs4.cs.princeton.edu/home/
  *
- * @param adjacent collection of mapped edges
- * @param vertices keep tracking of created vertices
- * @param edges edges Number of current created edges
+ * @param adjacent - collection of mapped edges
+ * @param vertices - keep tracking of created vertices
+ * @param edges - number of current created edges
  *
  */
 export default class DirectedGraph {
