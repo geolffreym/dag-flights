@@ -67,7 +67,7 @@ Format code: `make fmt`
 
 Check: `make check`
 
-Refs:
+## Refs:
 
 * Princeton Algorithms <https://algs4.cs.princeton.edu/42digraph/>
 * Potential implementation for gRPC <https://grpc.io/docs/languages/node/basics/>
